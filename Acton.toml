@@ -1,0 +1,48 @@
+[package]
+name = "untitled9"
+description = "A TON blockchain project"
+version = "0.1.0"
+license = "MIT"
+
+[toolchain]
+acton = "1.1.0"
+
+[contracts.TradingExtension]
+display-name = "TradingExtension"
+src = "contracts/TradingExtension.tolk"
+depends = []
+
+[contracts.WalletV5]
+display-name = "WalletV5"
+src = "contracts/walletv5/WalletV5.tolk"
+depends = []
+
+[test]
+
+[fmt]
+width = 100
+ignore = []
+
+[scripts]
+delete-extension = "acton script scripts/delete-extension.tolk --net testnet"
+deploy-emulation = "acton script scripts/deploy.tolk"
+deploy-testnet = "acton script scripts/deploy.tolk --net testnet"
+install-extension = "acton script scripts/install-extension.tolk --net testnet"
+add-session-key = "acton script scripts/add-session-key.tolk --net testnet"
+set-trigger-key = "acton script scripts/set-trigger-key.tolk --net testnet"
+store-order = "acton script scripts/store-order.tolk --net testnet"
+cancel-order = "acton script scripts/cancel-order.tolk --net testnet"
+trigger-order = "acton script scripts/trigger-order.tolk --net testnet"
+session-trade = "acton script scripts/session-trade.tolk --net testnet"
+session-status = "acton script scripts/session-status.tolk --net testnet"
+swap = "acton script scripts/swap.tolk --net mainnet"
+
+[import-mappings]
+acton = ".acton"
+contracts = "contracts"
+gen = "gen"
+tests = "tests"
+wrappers = "wrappers"
+
+# Check full Acton.toml reference and all available keys:
+# https://ton-blockchain.github.io/acton/docs/acton-toml
